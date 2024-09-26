@@ -361,3 +361,14 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Order de publicacion
+[Pp]ublish.cmd
+
+# Cadenas de Configuracion
+Config.json
+Config.Debug.json
+Configuration.Auto.cs
+# SecureConfigTemplate
+**/Configuration/Config.json
+**/Configuration/Config.Debug.json
