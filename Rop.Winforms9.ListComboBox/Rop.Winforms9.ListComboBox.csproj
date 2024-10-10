@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <UseWindowsForms>true</UseWindowsForms>
+	  <Title>Rop.Winforms9.ListComboBox</Title>
+	  <PackageTags>helper-classes;winforms;compatible;listbox;combobox</PackageTags>
+	  <Description>Helper classes for ListBox and ComboBox with a Compatible Item List</Description>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <Version>1.0.1</Version>
+	  <Authors>Ramon Ordiales Plaza</Authors>
+	  <Company>Ramon Ordiales Plaza</Company>
+	  <PackageReadmeFile>readme.md</PackageReadmeFile>
+	  <RepositoryUrl>https://api.nuget.org/v3/index.json</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Rop.IKeyValue" Version="1.0.3" />
+    <PackageReference Include="Rop.IncludeFrom.Annotations" Version="1.0.6" />
+    <PackageReference Include="Rop.IncludeFrom" Version="1.0.12" ReferenceOutputAssembly="false">
+	    <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <Import Project="..\Rop.Winforms9.Shared\Rop.Winforms9.Shared.projitems" Label="Shared" />
+  <ItemGroup>
+	  <None Include="readme.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+</Project>

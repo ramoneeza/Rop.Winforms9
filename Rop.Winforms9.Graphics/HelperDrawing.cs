@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using Rop.Winforms9.GraphicsEx.Geom;
@@ -8,7 +9,7 @@ namespace Rop.Winforms9.GraphicsEx
     /// <summary>
     /// Helper class for Drawing
     /// </summary>
-    public static partial class HelperDrawing
+    public static class HelperDrawing
     {
         public static void AddMemoryFont(this PrivateFontCollection pfc, byte[] font)
         {
@@ -34,13 +35,13 @@ namespace Rop.Winforms9.GraphicsEx
             return medida;
         }
 
-        public static void DrawOnBaseline(this Graphics g, string s, Font f, Brush b, Point pos)
+        public static void DrawOnBaseline(this Graphics g, string s, Font f, Brush b, PointF pos)
         {
             var baselineOffset = g.Baseline(s, f);
             g.DrawString(s, f, b, new PointF(pos.X, pos.Y - baselineOffset), StringFormat.GenericTypographic);
         }
         
-        public static void DrawAligmentString(this Graphics g, string cad, Font f, Brush br, Rectangle rect, ContentAlignment aligment, StringFormat sf)
+        public static void DrawAligmentString(this Graphics g, string cad, Font f, Brush br, RectangleF rect, ContentAlignment aligment, StringFormat sf)
         {
             var sz = g.MeasureString(cad, f, rect.Size, sf).ToSize();
             var res = rect;
@@ -75,7 +76,7 @@ namespace Rop.Winforms9.GraphicsEx
             g.DrawString(cad, f, br, res, sf);
         }
 
-        public static void DrawCenterString(this Graphics g, string cad, Font f, Brush br, int centerx, int y)
+        public static void DrawCenterString(this Graphics g, string cad, Font f, Brush br, float centerx, float y)
         {
             var sz = g.MeasureString(cad, f);
             var x = centerx - sz.Width / 2;
@@ -92,7 +93,7 @@ namespace Rop.Winforms9.GraphicsEx
         /// <param name="x">X position</param>
         /// <param name="y">Y position</param>
         /// <param name="width">Width</param>
-        public static void DrawRightString(this Graphics g, string cad, Font f, Brush br, int x, int y, int width)
+        public static void DrawRightString(this Graphics g, string cad, Font f, Brush br, float x, float y, float width)
         {
             var sz = g.MeasureString(cad, f);
             g.DrawString(cad, f, br, x + width - sz.Width, y);
@@ -109,8 +110,7 @@ namespace Rop.Winforms9.GraphicsEx
         /// <param name="y">Y position</param>
         /// <param name="width">Width</param>
         /// <param name="height">Height</param>
-        public static void DrawRightMiddleString(this Graphics g, string cad, Font f, Brush br, int x, int y, int width,
-            int height)
+        public static void DrawRightMiddleString(this Graphics g, string cad, Font f, Brush br, float x, float y, float width,float height)
         {
             var sz = g.MeasureString(cad, f);
             g.DrawString(cad, f, br, x + width - sz.Width, y + (height - sz.Height) / 2);
@@ -126,7 +126,7 @@ namespace Rop.Winforms9.GraphicsEx
         /// <param name="x">X position</param>
         /// <param name="y">Y position</param>
         /// <param name="width">Width</param>
-        public static void DrawCenterString(this Graphics g, string cad, Font f, Brush br, int x, int y, int width)
+        public static void DrawCenterString(this Graphics g, string cad, Font f, Brush br, float x, float y, float width)
         {
             var sz = g.MeasureString(cad, f);
             g.DrawString(cad, f, br, x + (width - sz.Width) / 2, y);
@@ -143,8 +143,7 @@ namespace Rop.Winforms9.GraphicsEx
         /// <param name="y">Y position</param>
         /// <param name="width">Width</param>
         /// <param name="height">Height</param>
-        public static void DrawCenterMiddleString(this Graphics g, string cad, Font f, Brush br, int x, int y,
-            int width, int height)
+        public static void DrawCenterMiddleString(this Graphics g, string cad, Font f, Brush br, float x, float y,float width, float height)
         {
             var sz = g.MeasureString(cad, f);
             g.DrawString(cad, f, br, x + (width - sz.Width) / 2, y + (height - sz.Height) / 2);
@@ -158,7 +157,7 @@ namespace Rop.Winforms9.GraphicsEx
         /// <param name="f">Font</param>
         /// <param name="br">Brush</param>
         /// <param name="rect">Container Rectangle</param>
-        public static void DrawRightString(this Graphics g, string cad, Font f, Brush br, Rectangle rect)
+        public static void DrawRightString(this Graphics g, string cad, Font f, Brush br, RectangleF rect)
         {
             DrawRightString(g, cad, f, br, rect.X, rect.Y, rect.Width);
         }
@@ -172,7 +171,7 @@ namespace Rop.Winforms9.GraphicsEx
         /// <param name="br">Brush</param>
         /// <param name="rect">Container Rectangle</param>
 
-        public static void DrawRightMiddleString(this Graphics g, string cad, Font f, Brush br, Rectangle rect)
+        public static void DrawRightMiddleString(this Graphics g, string cad, Font f, Brush br, RectangleF rect)
         {
             DrawRightMiddleString(g, cad, f, br, rect.X, rect.Y, rect.Width, rect.Height);
         }
@@ -185,7 +184,7 @@ namespace Rop.Winforms9.GraphicsEx
         /// <param name="f">Font</param>
         /// <param name="br">Brush</param>
         /// <param name="rect">Container Rectangle</param>
-        public static void DrawCenterString(this Graphics g, string cad, Font f, Brush br, Rectangle rect)
+        public static void DrawCenterString(this Graphics g, string cad, Font f, Brush br, RectangleF rect)
         {
             DrawCenterString(g, cad, f, br, rect.X, rect.Y, rect.Width);
         }
@@ -198,19 +197,18 @@ namespace Rop.Winforms9.GraphicsEx
         /// <param name="f">Font</param>
         /// <param name="br">Brush</param>
         /// <param name="rect">Container Rectangle</param>
-        public static void DrawCenterMiddleString(this Graphics g, string cad, Font f, Brush br, Rectangle rect)
+        public static void DrawCenterMiddleString(this Graphics g, string cad, Font f, Brush br, RectangleF rect)
         {
             DrawCenterMiddleString(g, cad, f, br, rect.X, rect.Y, rect.Width, rect.Height);
         }
-        public static void DrawSoftImage(this Graphics g,Rectangle dest,Bitmap img)
+        public static void DrawSoftImage(this Graphics g,Bitmap img,RectangleF dest,InterpolationMode? interpolationMode=null)
         {
-            var sm = g.SmoothingMode;
+            interpolationMode ??= InterpolationMode.HighQualityBilinear;
             var im = g.InterpolationMode;
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            g.SmoothingMode = SmoothingMode.HighQuality;
+            g.InterpolationMode = interpolationMode.Value;
             g.DrawImage(img, dest, new RectangleF(PointF.Empty, img.Size), GraphicsUnit.Pixel);
             g.InterpolationMode = im;
-            g.SmoothingMode = sm;
         }
     }
 }

@@ -5,6 +5,20 @@ VisualStudioVersion = 17.12.35309.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rop.Winforms9.GraphicsEx", "Rop.Winforms9.Graphics\Rop.Winforms9.GraphicsEx.csproj", "{1CDB6B5F-03A3-4710-994E-FEEFF27E8283}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rop.Winforms9.FontsEx", "Rop.Winforms9.FontsEx\Rop.Winforms9.FontsEx.csproj", "{044F8E9E-0B6B-4C96-B92B-EA158824EDDF}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Rop.Winforms9.Shared", "Rop.Winforms9.Shared\Rop.Winforms9.Shared.shproj", "{7DFCF2B8-17C8-4F06-AF84-D7691040CF7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rop.Winforms9.Helper", "Rop.Winforms9.Helper\Rop.Winforms9.Helper.csproj", "{7D4BEA58-F6C5-4AC3-9E05-5F836CB99C86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rop.Winforms9.Basic", "Rop.Winforms9.Basic\Rop.Winforms9.Basic.csproj", "{6FE0CEC6-0E18-4CEC-9324-92BCC718AF15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms9.Test", "WinForms9.Test\WinForms9.Test.csproj", "{3FCC0D52-1586-493F-8BB7-B11EC183611D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rop.Winforms9.ListComboBox", "Rop.Winforms9.ListComboBox\Rop.Winforms9.ListComboBox.csproj", "{704DFED3-5CA2-49DD-BCDE-309069963CF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rop.Winforms9.KeyValueListComboBox", "Rop.Winforms9.KeyValueListComboBox\Rop.Winforms9.KeyValueListComboBox.csproj", "{D06D3D4E-B845-4BBD-B120-0B2FBC20262F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,11 +29,39 @@ Global
 		{1CDB6B5F-03A3-4710-994E-FEEFF27E8283}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CDB6B5F-03A3-4710-994E-FEEFF27E8283}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CDB6B5F-03A3-4710-994E-FEEFF27E8283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{044F8E9E-0B6B-4C96-B92B-EA158824EDDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{044F8E9E-0B6B-4C96-B92B-EA158824EDDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{044F8E9E-0B6B-4C96-B92B-EA158824EDDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{044F8E9E-0B6B-4C96-B92B-EA158824EDDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D4BEA58-F6C5-4AC3-9E05-5F836CB99C86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D4BEA58-F6C5-4AC3-9E05-5F836CB99C86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D4BEA58-F6C5-4AC3-9E05-5F836CB99C86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D4BEA58-F6C5-4AC3-9E05-5F836CB99C86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FE0CEC6-0E18-4CEC-9324-92BCC718AF15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FE0CEC6-0E18-4CEC-9324-92BCC718AF15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FE0CEC6-0E18-4CEC-9324-92BCC718AF15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FE0CEC6-0E18-4CEC-9324-92BCC718AF15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FCC0D52-1586-493F-8BB7-B11EC183611D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FCC0D52-1586-493F-8BB7-B11EC183611D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FCC0D52-1586-493F-8BB7-B11EC183611D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FCC0D52-1586-493F-8BB7-B11EC183611D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{704DFED3-5CA2-49DD-BCDE-309069963CF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{704DFED3-5CA2-49DD-BCDE-309069963CF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{704DFED3-5CA2-49DD-BCDE-309069963CF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{704DFED3-5CA2-49DD-BCDE-309069963CF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D06D3D4E-B845-4BBD-B120-0B2FBC20262F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D06D3D4E-B845-4BBD-B120-0B2FBC20262F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D06D3D4E-B845-4BBD-B120-0B2FBC20262F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D06D3D4E-B845-4BBD-B120-0B2FBC20262F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CE3C3428-F59E-4CD5-B788-7D8252BBC1EC}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Rop.Winforms9.Shared\Rop.Winforms9.Shared.projitems*{704dfed3-5ca2-49dd-bcde-309069963cf2}*SharedItemsImports = 5
+		Rop.Winforms9.Shared\Rop.Winforms9.Shared.projitems*{7dfcf2b8-17c8-4f06-af84-d7691040cf7e}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

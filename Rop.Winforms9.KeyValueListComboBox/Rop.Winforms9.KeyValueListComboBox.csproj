@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <UseWindowsForms>true</UseWindowsForms>
+	  <Title>Rop.Winforms9.KeyValueListComboBox</Title>
+	  <PackageTags>helper-classes;winforms;keyvalue;listbox;combobox</PackageTags>
+	  <Description>Helper classes for KeyValued ListBox and ComboBox</Description>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <Version>1.0.1</Version>
+	  <Authors>Ramon Ordiales Plaza</Authors>
+	  <Company>Ramon Ordiales Plaza</Company>
+	  <PackageReadmeFile>readme.md</PackageReadmeFile>
+	  <RepositoryUrl>https://api.nuget.org/v3/index.json</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Rop.Winforms9.Graphics\Rop.Winforms9.GraphicsEx.csproj" />
+    <ProjectReference Include="..\Rop.Winforms9.Helper\Rop.Winforms9.Helper.csproj" />
+    <ProjectReference Include="..\Rop.Winforms9.ListComboBox\Rop.Winforms9.ListComboBox.csproj" />
+    <PackageReference Include="Rop.IKeyValue" Version="1.0.3" />
+    <PackageReference Include="Rop.IncludeFrom.Annotations" Version="1.0.6" />
+    <PackageReference Include="Rop.IncludeFrom" Version="1.0.12" ReferenceOutputAssembly="false">
+	    <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+	<ItemGroup>
+		<None Include="readme.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
+</Project>

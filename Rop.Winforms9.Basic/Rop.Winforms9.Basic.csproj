@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<UseWindowsForms>true</UseWindowsForms>
+	  <Title>Rop.Winforms9.Basic</Title>
+	  <PackageTags>helper-classes;extensions;winforms</PackageTags>
+	  <Description>Basic Forms classes for Winforms</Description>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <Version>1.0.1</Version>
+	  <Authors>Ramon Ordiales Plaza</Authors>
+	  <Company>Ramon Ordiales Plaza</Company>
+	  <PackageReadmeFile>readme.md</PackageReadmeFile>
+	  <RepositoryUrl>https://api.nuget.org/v3/index.json</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="cursor.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="cursor.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Rop.Results9" Version="1.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Rop.Winforms9.Helper\Rop.Winforms9.Helper.csproj" />
+  </ItemGroup>
+	<ItemGroup>
+		<None Include="readme.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
+</Project>
