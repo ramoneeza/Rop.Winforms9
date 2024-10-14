@@ -45,7 +45,7 @@ public class FormDialog:FormDownPanel
         base.TopMost = true;
     }
 
-    protected override void Init()
+    public override void Init()
     {
         base.Init();
         this.Activate();

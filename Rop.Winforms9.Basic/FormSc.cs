@@ -6,7 +6,8 @@ using Rop.Winforms9.Helper;
 namespace Rop.Winforms9.Basic
 {
     internal partial class _dummy { };
-    public partial class FormSc : Form
+
+    public partial class FormSc : Form, IForm9
     {
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public SynchronizationContext SynchronizationContext { get; private set; }
@@ -39,10 +40,11 @@ namespace Rop.Winforms9.Basic
             this.Shown += FormSc_Shown;   
         }
 
-        protected virtual void Init()
+        public virtual void Init()
         {
         }
-        protected virtual async ValueTask InitAsync()
+
+        public virtual async ValueTask InitAsync()
         {
             await Task.CompletedTask;
         }

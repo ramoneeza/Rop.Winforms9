@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net9.0-windows</TargetFramework>
@@ -9,7 +9,7 @@
 	  <PackageTags>helper-classes;winforms;keyvalue;listbox;combobox</PackageTags>
 	  <Description>Helper classes for KeyValued ListBox and ComboBox</Description>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <Version>1.0.1</Version>
+	  <Version>1.0.2</Version>
 	  <Authors>Ramon Ordiales Plaza</Authors>
 	  <Company>Ramon Ordiales Plaza</Company>
 	  <PackageReadmeFile>readme.md</PackageReadmeFile>

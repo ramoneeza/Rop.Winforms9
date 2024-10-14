@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rop.Winforms9.ListComboBox"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rop.Winforms9.KeyValueListComboBox", "Rop.Winforms9.KeyValueListComboBox\Rop.Winforms9.KeyValueListComboBox.csproj", "{D06D3D4E-B845-4BBD-B120-0B2FBC20262F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rop.Winforms9.Decorators", "Rop.Winforms9.Decorators\Rop.Winforms9.Decorators.csproj", "{2398DCE4-E1BB-42CD-ACBB-4CEAF8678BFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{D06D3D4E-B845-4BBD-B120-0B2FBC20262F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D06D3D4E-B845-4BBD-B120-0B2FBC20262F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D06D3D4E-B845-4BBD-B120-0B2FBC20262F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2398DCE4-E1BB-42CD-ACBB-4CEAF8678BFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2398DCE4-E1BB-42CD-ACBB-4CEAF8678BFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2398DCE4-E1BB-42CD-ACBB-4CEAF8678BFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2398DCE4-E1BB-42CD-ACBB-4CEAF8678BFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
