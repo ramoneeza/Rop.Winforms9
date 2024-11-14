@@ -9,7 +9,7 @@
 	  <PackageTags>helper-classes;winforms;keyvalue;listbox;combobox</PackageTags>
 	  <Description>Helper classes for KeyValued ListBox and ComboBox</Description>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <Version>1.0.2</Version>
+	  <Version>1.0.7</Version>
 	  <Authors>Ramon Ordiales Plaza</Authors>
 	  <Company>Ramon Ordiales Plaza</Company>
 	  <PackageReadmeFile>readme.md</PackageReadmeFile>

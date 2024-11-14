@@ -7,7 +7,8 @@ namespace Rop.Winforms9.ListComboBox;
 
 [DesignerCategory("Code")]
 [IncludeFrom(typeof(PartialControlWithOnLoad))]
-public partial class CompatibleComboBox : ComboBox, IHasCompatibleItems,IControlWithOnLoad
+[IncludeFrom(typeof(PartialCanBeKeyValue))]
+public partial class CompatibleComboBox : ComboBox, IHasCompatibleItems,IControlWithOnLoad,ICanBeKeyValue
 {
     [NonSerialized]
     private CompatibleItems _items=default!;

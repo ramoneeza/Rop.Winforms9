@@ -11,11 +11,16 @@ using Rop.Winforms9.Basic;
 
 namespace WinForms9.Test
 {
-    public partial class FormDlg: FormDialog
+    public partial class FormDlg : FormDialog
     {
         public FormDlg()
         {
             InitializeComponent();
+        }
+
+        private void FormDlg_Shown(object sender, EventArgs e)
+        {
+            concurrentBar1.Start(0, "Hola");
         }
     }
 }

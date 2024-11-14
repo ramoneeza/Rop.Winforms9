@@ -1,6 +1,6 @@
 ﻿using Rop.Results9;
 
-namespace Rop.Winforms9.Basic;
+namespace Rop.Winforms9.Helper;
 
 public interface IForm9
 {

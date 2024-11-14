@@ -1,4 +1,4 @@
-﻿namespace Rop.Winforms9.KeyValueListComboBox
+﻿namespace Rop.Winforms9.ListComboBox
 {
     public class UpdateItemsEventArgs : EventArgs
     {
@@ -7,8 +7,7 @@
         public UpdateItemsEventArgs(string keystring, IEnumerable<object>? items = null)
         {
             KeyString = keystring;
-            Items = new List<object>();
-            if (items != null) Items.AddRange(items);
+            Items = Items?.ToList<object>() ?? [];
         }
     }
 }

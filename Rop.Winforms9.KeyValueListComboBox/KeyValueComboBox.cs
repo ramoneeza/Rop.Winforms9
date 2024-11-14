@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
+using Rop.Helper;
 using Rop.IncludeFrom.Annotations;
 using Rop.Winforms9.ListComboBox;
 
 namespace Rop.Winforms9.KeyValueListComboBox
 {
-    [IncludeFrom(typeof(PartialKeyValueItems))]
     [IncludeFrom(typeof(PartialKeyValueControlDraw))]
     public partial class KeyValueComboBox : CompatibleComboBox, IKeyValueItems, IKeyValueControlDraw
     {
@@ -45,7 +45,15 @@ namespace Rop.Winforms9.KeyValueListComboBox
             OnDrawItem2(e);
         }
         public object? GetItem(int item)=>(item<0||item>=Items.Count)?null:Items[item];
-
+        public new string SelectedValue
+        {
+            get
+            {
+                if (NoSelectedItem) return "";
+                var v = Items[SelectedIndex];
+                return v is IKeyValue kv ? kv.GetValue() : v?.ToString() ?? "";
+            }
+        }
     }
     
 

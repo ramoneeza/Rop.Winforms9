@@ -9,7 +9,8 @@ namespace Rop.Winforms9.ListComboBox
     /// </summary>
     [DesignerCategory("Code")]
     [IncludeFrom(typeof(PartialControlWithOnLoad))]
-    public partial class CompatibleListBox : ListBox,IHasCompatibleItems,IControlWithOnLoad
+    [IncludeFrom(typeof(PartialCanBeKeyValue))]
+    public partial class CompatibleListBox : ListBox,IHasCompatibleItems,IControlWithOnLoad,ICanBeKeyValue
     {
         public CompatibleListBox()
         {

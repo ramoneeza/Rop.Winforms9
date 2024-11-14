@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rop.Winforms9.KeyValueListC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rop.Winforms9.Decorators", "Rop.Winforms9.Decorators\Rop.Winforms9.Decorators.csproj", "{2398DCE4-E1BB-42CD-ACBB-4CEAF8678BFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rop.Winforms9.Controls", "Rop.Winforms9.Controls\Rop.Winforms9.Controls.csproj", "{DC2366AE-189C-4F28-8072-0F5F979A36EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{2398DCE4-E1BB-42CD-ACBB-4CEAF8678BFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2398DCE4-E1BB-42CD-ACBB-4CEAF8678BFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2398DCE4-E1BB-42CD-ACBB-4CEAF8678BFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC2366AE-189C-4F28-8072-0F5F979A36EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC2366AE-189C-4F28-8072-0F5F979A36EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC2366AE-189C-4F28-8072-0F5F979A36EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC2366AE-189C-4F28-8072-0F5F979A36EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

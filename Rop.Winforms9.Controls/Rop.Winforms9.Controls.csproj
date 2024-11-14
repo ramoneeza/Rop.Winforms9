@@ -5,20 +5,21 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <UseWindowsForms>true</UseWindowsForms>
-	  <Title>Rop.Winforms9.Decorators</Title>
-	  <PackageTags>helper-classes;winforms;decorators;listbox;combobox</PackageTags>
-	  <Description>Helper classes for winforms decorators</Description>
+	  <Title>Rop.Winforms9.Controls</Title>
+	  <PackageTags>controls;winforms;</PackageTags>
+	  <Description>Controls</Description>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <Version>1.0.3</Version>
+	  <Version>1.0.13</Version>
 	  <Authors>Ramon Ordiales Plaza</Authors>
 	  <Company>Ramon Ordiales Plaza</Company>
 	  <PackageReadmeFile>readme.md</PackageReadmeFile>
 	  <RepositoryUrl>https://api.nuget.org/v3/index.json</RepositoryUrl>
   </PropertyGroup>
 	<ItemGroup>
-		<None Include="readme.md" Pack="true" PackagePath="\"/>
+		<None Include="readme.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 	<ItemGroup>
+	  <ProjectReference Include="..\Rop.Winforms9.Graphics\Rop.Winforms9.GraphicsEx.csproj" />
 	  <ProjectReference Include="..\Rop.Winforms9.Helper\Rop.Winforms9.Helper.csproj" />
 	</ItemGroup>
 </Project>

@@ -32,6 +32,8 @@
             keyValueLabel1 = new Rop.Winforms9.KeyValueListComboBox.KeyValueLabel();
             keyValueComboBox1 = new Rop.Winforms9.KeyValueListComboBox.KeyValueComboBox();
             keyValueListBox1 = new Rop.Winforms9.KeyValueListComboBox.KeyValueListBox();
+            nullDateOnlyPicker1 = new Rop.Winforms9.Controls.NullDateOnlyPicker();
+            concurrentBar1 = new Rop.Winforms9.Controls.ConcurrentBar();
             MainPanel.SuspendLayout();
             DownPanel.SuspendLayout();
             SuspendLayout();
@@ -39,6 +41,8 @@
             // MainPanel
             // 
             MainPanel.BackColor = Color.FromArgb(255, 192, 192);
+            MainPanel.Controls.Add(concurrentBar1);
+            MainPanel.Controls.Add(nullDateOnlyPicker1);
             MainPanel.Controls.Add(keyValueListBox1);
             MainPanel.Controls.Add(keyValueComboBox1);
             MainPanel.Controls.Add(keyValueLabel1);
@@ -127,6 +131,27 @@
             keyValueListBox1.TabIndex = 5;
             keyValueListBox1.TopMargin = 0;
             // 
+            // nullDateOnlyPicker1
+            // 
+            nullDateOnlyPicker1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            nullDateOnlyPicker1.Location = new Point(106, 192);
+            nullDateOnlyPicker1.MinDate = new DateOnly(1901, 1, 1);
+            nullDateOnlyPicker1.Name = "nullDateOnlyPicker1";
+            nullDateOnlyPicker1.Size = new Size(251, 23);
+            nullDateOnlyPicker1.TabIndex = 6;
+            // 
+            // concurrentBar1
+            // 
+            concurrentBar1.BarBackground = Color.Empty;
+            concurrentBar1.BarColor = Color.CornflowerBlue;
+            concurrentBar1.BorderColor = Color.Gray;
+            concurrentBar1.IsMarquee = true;
+            concurrentBar1.Location = new Point(68, 298);
+            concurrentBar1.Name = "concurrentBar1";
+            concurrentBar1.Size = new Size(628, 26);
+            concurrentBar1.TabIndex = 7;
+            concurrentBar1.Text = "concurrentBar1";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -147,5 +172,7 @@
         private Rop.Winforms9.KeyValueListComboBox.KeyValueLabel keyValueLabel1;
         private Rop.Winforms9.KeyValueListComboBox.KeyValueListBox keyValueListBox1;
         private Rop.Winforms9.KeyValueListComboBox.KeyValueComboBox keyValueComboBox1;
+        private Rop.Winforms9.Controls.NullDateOnlyPicker nullDateOnlyPicker1;
+        private Rop.Winforms9.Controls.ConcurrentBar concurrentBar1;
     }
 }

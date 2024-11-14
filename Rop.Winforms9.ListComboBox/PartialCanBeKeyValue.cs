@@ -1,9 +1,14 @@
-﻿using System.ComponentModel;
-using Rop.Helper;
+﻿using Rop.Helper;
 using Rop.IncludeFrom.Annotations;
-using Rop.Winforms9.ListComboBox;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace Rop.Winforms9.KeyValueListComboBox;
+namespace Rop.Winforms9.ListComboBox;
 
 [DesignerCategory("Code")]
 internal partial class DummyIHasCompatibleItems : Control, IHasCompatibleItems
@@ -15,11 +20,18 @@ internal partial class DummyIHasCompatibleItems : Control, IHasCompatibleItems
     public int SelectedIndex { get; set; }
     public void RefreshItems() { }
     public virtual void OnDrawItem() { }
-    
+
+    public void BeginUpdate()
+    {
+    }
+    public void EndUpdate()
+    {
+    }
+
 }
 [DesignerCategory("Code")]
 [DummyPartial]
-internal partial class PartialKeyValueItems : DummyIHasCompatibleItems, IKeyValueItems
+internal partial class PartialCanBeKeyValue : DummyIHasCompatibleItems,ICanBeKeyValue
 {
     public event EventHandler<UpdateItemsEventArgs>? UpdateItems;
     public event EventHandler<UpdateItemsEventArgs>? UpdatePreItems;
@@ -46,6 +58,7 @@ internal partial class PartialKeyValueItems : DummyIHasCompatibleItems, IKeyValu
     public virtual void OnUpdateOrderItems()
     {
         if (UpdateOrderItems == null) return;
+        BeginUpdate();
         var a = SelectedKeyString;
         var items = Items.Where(o => !_preitems.Contains(o) && !_postitems.Contains(o)).ToList();
         Items.Clear();
@@ -55,6 +68,7 @@ internal partial class PartialKeyValueItems : DummyIHasCompatibleItems, IKeyValu
         Items.AddRange(arg.Items);
         Items.AddRange(_postitems);
         SelectedKeyString = a;
+        EndUpdate();
         Invalidate();
     }
     public virtual void OnUpdateOrderItems(OrderItemsEventArgs arg)
@@ -122,11 +136,13 @@ internal partial class PartialKeyValueItems : DummyIHasCompatibleItems, IKeyValu
         var argpost = new UpdateItemsEventArgs(a);
         await Task.Run(() => OnUpdatePostItems(argpost));
         _postitems = argpost.Items;
+        BeginUpdate();
         a = argpost.KeyString;
         Items.AddRange(_preitems);
         Items.AddRange(args.Items);
         Items.AddRange(_postitems);
         SelectedKeyString = a;
+        EndUpdate();
         RefreshItems();
     }
     public virtual void OnUpdateItems(UpdateItemsEventArgs args)
@@ -172,7 +188,17 @@ internal partial class PartialKeyValueItems : DummyIHasCompatibleItems, IKeyValu
         {
             if (SelectedIndex < 0) return "";
             var o = Items[SelectedIndex];
-            return o is IKeyValue item ? item.GetKey() : $"!{o}";
+            switch (o)
+            {
+                case IKeyValue kv:
+                    return kv.GetKey();
+                case string s:
+                    return $"!{s}";
+                case null:
+                    return "";
+                default:
+                    return $"!#{o?.GetHashCode()}";
+            }
         }
         set
         {
@@ -182,6 +208,16 @@ internal partial class PartialKeyValueItems : DummyIHasCompatibleItems, IKeyValu
                 return;
             }
 
+            if (value.StartsWith("!#"))
+            {
+                var h =int.Parse(value.Substring(2));
+                var i=FindHashCode(h);
+                if (i >= 0)
+                    SelectedIndex = i;
+                else
+                    _setNullIndex();
+                return;
+            }
             if (value[0] != '!')
             {
                 var i = FindKeyIndex(value);
@@ -201,6 +237,15 @@ internal partial class PartialKeyValueItems : DummyIHasCompatibleItems, IKeyValu
         }
     }
 
+    public int FindHashCode(int i)
+    {
+        for (var f = 0; f < Items.Count; f++)
+        {
+            if (Items[f]?.GetHashCode()==i) return f;
+        }
+        return -1;
+    }
+
     [Browsable(false)]
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public int SelectedIntKey
@@ -215,19 +260,19 @@ internal partial class PartialKeyValueItems : DummyIHasCompatibleItems, IKeyValu
         }
     }
 
-    [Browsable(false)]
-    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-#pragma warning disable CS0109 // Member does not hide an inherited member; new keyword is not required
-    public new string SelectedValue
-#pragma warning restore CS0109 // Member does not hide an inherited member; new keyword is not required
-    {
-        get
-        {
-            if (NoSelectedItem) return "";
-            var v = Items[SelectedIndex];
-            return v is IKeyValue kv ? kv.GetValue() : v?.ToString() ?? "";
-        }
-    }
+//    [Browsable(false)]
+//    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+//#pragma warning disable CS0109 // Member does not hide an inherited member; new keyword is not required
+//    public new string SelectedValue
+//#pragma warning restore CS0109 // Member does not hide an inherited member; new keyword is not required
+//    {
+//        get
+//        {
+//            if (NoSelectedItem) return "";
+//            var v = Items[SelectedIndex];
+//            return v is IKeyValue kv ? kv.GetValue() : v?.ToString() ?? "";
+//        }
+//    }
 
     [Browsable(false)]
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]

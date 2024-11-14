@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            concurrentBar1 = new Rop.Winforms9.Controls.ConcurrentBar();
             DownPanel.SuspendLayout();
             SuspendLayout();
-            
             // 
             // BtnExit
             // 
@@ -47,18 +47,38 @@
             DownPanel.Location = new Point(0, 417);
             DownPanel.Size = new Size(800, 33);
             // 
+            // concurrentBar1
+            // 
+            concurrentBar1.BarBackground = Color.Empty;
+            concurrentBar1.BarColor = Color.CornflowerBlue;
+            concurrentBar1.BorderColor = Color.Gray;
+            concurrentBar1.Font = new Font("Segoe UI", 9F);
+            concurrentBar1.IsMarquee = true;
+            concurrentBar1.Location = new Point(90, 252);
+            concurrentBar1.Name = "concurrentBar1";
+            concurrentBar1.Size = new Size(539, 30);
+            concurrentBar1.TabIndex = 1;
+            concurrentBar1.Text = "concurrentBar1";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(concurrentBar1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
+            Shown += Form1_Shown;
+            Controls.SetChildIndex(DownPanel, 0);
+            Controls.SetChildIndex(concurrentBar1, 0);
             DownPanel.ResumeLayout(false);
             DownPanel.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Rop.Winforms9.Controls.ConcurrentBar concurrentBar1;
     }
 }

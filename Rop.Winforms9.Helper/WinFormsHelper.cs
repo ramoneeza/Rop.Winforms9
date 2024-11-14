@@ -41,8 +41,8 @@ public static partial class WinFormsHelper
         IntPtr lParam   // second message parameter
     );
         
-    private static readonly FieldInfo? _defaultIconField=typeof(Form).GetField("defaultIcon", BindingFlags.NonPublic | BindingFlags.Static);
-    private static readonly FieldInfo? _defaultFontField=typeof(Form).GetField("defaultFont", BindingFlags.NonPublic | BindingFlags.Static);
+    private static readonly FieldInfo? _defaultIconField=typeof(Form).GetField("s_defaultIcon", BindingFlags.NonPublic | BindingFlags.Static);
+    private static readonly FieldInfo? _defaultFontField=typeof(Form).GetField("s_defaultFont", BindingFlags.NonPublic | BindingFlags.Static);
 
     public static void SetDefaultIcon(Icon ico)
     {
